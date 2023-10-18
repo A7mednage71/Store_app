@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:http/http.dart' as http;
+import 'package:store_proj/Screens/Home_page.dart';
+
 void main() {
   runApp(const Store_app());
 }
@@ -10,8 +13,9 @@ class Store_app extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-   
+      home: Home_Page(
+        
+      ),
     );
   }
 }

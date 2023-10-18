@@ -1,5 +1,0 @@
-class AllProducts_service{
-  
-  
-
-}

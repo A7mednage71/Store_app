@@ -1,6 +1,5 @@
-
 class ProductModel {
-  dynamic? id;
+  int? id;
   String? title;
   double? price;
   String? description;
@@ -8,33 +7,40 @@ class ProductModel {
   String? image;
   Rating? rating;
 
-  ProductModel({this.id, this.title, this.price, this.description, this.category, this.image, this.rating});
+  ProductModel(
+      {this.id,
+      this.title,
+      this.price,
+      this.description,
+      this.category,
+      this.image,
+      this.rating});
 
   ProductModel.fromJson(Map<String, dynamic> json) {
-    if(json["id"] is int) {
+    if (json["id"] is int) {
       id = json["id"];
     }
-    if(json["title"] is String) {
+    if (json["title"] is String) {
       title = json["title"];
     }
-    if(json["price"] is double) {
+    if (json["price"] is double) {
       price = json["price"];
     }
-    if(json["description"] is String) {
+    if (json["description"] is String) {
       description = json["description"];
     }
-    if(json["category"] is String) {
+    if (json["category"] is String) {
       category = json["category"];
     }
-    if(json["image"] is String) {
+    if (json["image"] is String) {
       image = json["image"];
     }
-    if(json["rating"] is Map) {
+    if (json["rating"] is Map) {
       rating = json["rating"] == null ? null : Rating.fromJson(json["rating"]);
     }
   }
 
-  Map<String, dynamic> toJson() { 
+  Map<String, dynamic> toJson() {
     final Map<String, dynamic> _data = <String, dynamic>{};
     _data["id"] = id;
     _data["title"] = title;
@@ -42,24 +48,24 @@ class ProductModel {
     _data["description"] = description;
     _data["category"] = category;
     _data["image"] = image;
-    if(rating != null) {
+    if (rating != null) {
       _data["rating"] = rating?.toJson();
     }
     return _data;
   }
 }
 
-class Rating { 
+class Rating {
   double? rate;
   int? count;
 
   Rating({this.rate, this.count});
 
   Rating.fromJson(Map<String, dynamic> json) {
-    if(json["rate"] is double) {
+    if (json["rate"] is double) {
       rate = json["rate"];
     }
-    if(json["count"] is int) {
+    if (json["count"] is int) {
       count = json["count"];
     }
   }

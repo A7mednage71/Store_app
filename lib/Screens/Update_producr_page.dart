@@ -69,7 +69,7 @@ class _UpdateBroductState extends State<UpdateBroduct> {
                 type: TextInputType.number,
                 hint: 'price',
                 onchange: (data) {
-                  productPrice = double.tryParse(data);
+                  productPrice = double.tryParse(data)??10;
                 },
               ),
               const SizedBox(
@@ -90,40 +90,24 @@ class _UpdateBroductState extends State<UpdateBroduct> {
                   setState(() {
                     isloading = true;
                   });
-                  await Update_product().Updateproduct(
-                    id: widget.model.id!,
-                    title: productName == null
-                        ? widget.model.title!
-                        : productName!,
-                    description: productDescription == null
-                        ? widget.model.description!
-                        : productDescription!,
-                    image: productImage == null
-                        ? widget.model.image!
-                        : productImage!,
-                    price: productPrice == null
-                        ? 10
-                        : productPrice!,
-                    Catogry: widget.model.category!,
-                  );
 
                   try {
-                    // await Update_product().Updateproduct(
-                    //   id: widget.model.id!,
-                    //   title: productName == null
-                    //       ? widget.model.title!
-                    //       : productName!,
-                    //   description: productDescription == null
-                    //       ? widget.model.description!
-                    //       : productDescription!,
-                    //   image: productImage == null
-                    //       ? widget.model.image!
-                    //       : productImage!,
-                    //   price: productPrice == null
-                    //       ? widget.model.price!
-                    //       : productPrice!,
-                    //   Catogry: widget.model.category!,
-                    // );
+                    await Update_product().Updateproduct(
+                      id: widget.model.id!,
+                      title: productName == null
+                          ? widget.model.title!
+                          : productName!,
+                      description: productDescription == null
+                          ? widget.model.description!
+                          : productDescription!,
+                      image: productImage == null
+                          ? widget.model.image!
+                          : productImage!,
+                      price: productPrice == null
+                          ? 10
+                          : productPrice!,
+                      Catogry: widget.model.category!,
+                    );
                     print('success');
                   } catch (e) {
                     print(e.toString());

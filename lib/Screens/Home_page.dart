@@ -39,7 +39,6 @@ class Home_Page extends StatelessWidget {
         child: FutureBuilder<List<ProductModel>>(
             future: AllProducts_service().getAllProducts(),
             builder: (context, snapshot) {
-          
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(
                   child: CircularProgressIndicator(),
@@ -47,11 +46,14 @@ class Home_Page extends StatelessWidget {
               }
 
               if (snapshot.hasError) {
+                print('Errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr: ' +
+                    snapshot.error.toString());
+
                 return Center(
                   child: Text(snapshot.error.toString()),
                 );
-              } 
-              
+              }
+
               List<ProductModel> prducts = snapshot.data!;
 
               return GridView.builder(

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'package:http/http.dart' as http;
 import 'package:store_proj/Screens/Home_page.dart';
 
 void main() {

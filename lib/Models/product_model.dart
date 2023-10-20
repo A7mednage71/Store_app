@@ -1,6 +1,6 @@
 
 class ProductModel {
-  int? id;
+  dynamic? id;
   String? title;
   double? price;
   String? description;
@@ -34,7 +34,7 @@ class ProductModel {
     }
   }
 
-  Map<String, dynamic> toJson() {
+  Map<String, dynamic> toJson() { 
     final Map<String, dynamic> _data = <String, dynamic>{};
     _data["id"] = id;
     _data["title"] = title;

@@ -17,7 +17,7 @@ class CustomStack extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return const UpdateBroduct();
+              return  UpdateBroduct(model: model,);
             },
           ),
         );
